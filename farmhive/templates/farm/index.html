@@ -1,0 +1,100 @@
+{% extends 'main/base.html' %}
+{% block title %}Farm Hive{% endblock %}
+{% block content %}
+{% load static %}
+
+    <div class="single-hero-post bg-overlay">
+        <!-- Post Image -->
+        <div class="slide-img bg-img" style="background-image: url(img/bg-img/2.jpg);"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <!-- Post Content -->
+                    <div class="hero-slides-content text-center">
+                        <h2>Plants exist in the weather and light rays that surround them</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque ante nec ipsum iaculis, ac iaculis ipsum porttitor. Vivamus cursus nisl lectus, id mattis nisl lobortis eu. Duis diam augue, dapibus ut dolor at, mattis maximus dolor.</p>
+                        <div class="welcome-btn-group">
+                            <a href="#" class="btn alazea-btn mr-30">GET STARTED</a>
+                            <a href="{% url 'main:contact' %}" class="btn alazea-btn active">CONTACT US</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Service Area Start ##### -->
+    <section class="our-services-area bg-gray section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center">
+                        <h2>OUR Departments</h2>
+                        <p>We provide the perfect service for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-between">
+                <div class="col-12 col-lg-5">
+                    <div class="alazea-service-area mb-100">
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
+                            {% for department in departments %}
+                                <div class="service-icon mr-30">
+                                    <img src="img/core-img/s1.png" alt="">
+                                </div>
+                                <!-- Content -->
+                                <div class="service-content">
+                                    <img src="{{ department.image.url }}" alt="{{ department.name }}">
+                                    <h5>Plants Care</h5>
+                                    <p>{{ department.short_content | truncatewords:30 }}</p>
+                                    <a href="{% url 'department_detail' department.id %}">Read More</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="img/core-img/s2.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>Pressure Washing</h5>
+                                <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Service Area -->
+                        <div class="single-service-area d-flex align-items-center wow fadeInUp" data-wow-delay="500ms">
+                            <!-- Icon -->
+                            <div class="service-icon mr-30">
+                                <img src="img/core-img/s3.png" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="service-content">
+                                <h5>Tree Service &amp; Trimming</h5>
+                                <p>In Aenean purus, pretium sito amet sapien denim moste consectet sedoni urna placerat sodales.service its.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="alazea-video-area bg-overlay mb-100">
+                        <img src="img/bg-img/23.jpg" alt="">
+                        <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-icon">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

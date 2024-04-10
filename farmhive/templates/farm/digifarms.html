@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% block title %}Farm Hive{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container department-container">
+    <h1 class="text-center">Digital Farms</h1>
+    <div class="row">
+        {% for digifarm in digifarms %}
+        <div class="col-md-6">
+            <div class="card department-card">
+                <img src="{{ digifarm.image.url }}" class="card-img-top" alt="{{ digifarm.name }}">
+                <div class="card-body department-card-content">
+                    <h2 class="card-title department-card-title">{{ digifarm.name }}</h2>
+                    <p class="card-text department-card-short-content">{{ digifarm.title }}</p>
+                    <p class="card-text department-card-short-content">{{ digifarm.short_content | truncatewords:30 }}</p>
+                    <a href="{% url 'department_detail' department.id %}" class="read-more-link">Read More</a>
+                    <a href="#">Add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

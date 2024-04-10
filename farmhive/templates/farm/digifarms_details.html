@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% block title %}Department Detail{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container department-container">
+    <h1 class="text-center">Details of {{ digifarms.name }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card department-card">
+                <img src="{{ digifarms.image.url }}" class="card-img-top" alt="{{ digifarms.name }}">
+                <div class="card-body department-card-content">
+                    <h2 class="card-title department-card-title">{{ digifarms.name }}</h2>
+                    <p class="card-text department-card-short-content">{{ digifarms.title }}</p>
+                    <p class="card-text department-card-short-content">{{ digifarms.short_content }}</p>
+                    <p class="card-text department-card-short-content">{{ digifarms.full_content }}</p>
+                    <a href="#">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,627 @@
+{% extends 'main/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+
+    <div class="slider-detail">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item ">
+                    <img class="d-block w-100" src="{% static 'images/techhive/slider/slider_1.jpg' %}" alt="First slide">
+                    <div class="carousel-caption fvgb d-none d-md-block">
+                        <h5 class="animated bounceInDown">Grow your Business with Smarteye</h5>
+                        <p class="animated bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, <br>
+                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
+                            sed sagittis at, sagittis quis neque. Praesent.</p>
+
+                        <div class="row vbh">
+                            <div class="btn btn-success animated bounceInUp">Book an Appointment </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static 'images/techhive/slider/slider_3.jpg' %}" alt="Third slide">
+                    <div class="carousel-caption vdg-cur d-none d-md-block">
+                        <h5 class="animated bounceInDown">Best Free Website Template</h5>
+                        <p class="animated bounceInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, <br>
+                            aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis <br>
+                            sed sagittis at, sagittis quis neque. Praesent.</p>
+
+                        <div class="row vbh">
+
+                            <div class="btn btn-success animated bounceInUp"> Book an Appointment </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!--################### Key Features Starts Here #######################--->
+       
+        <div class="key-feature container-fluid">
+           <div class="container">
+              <div class="session-title row">
+                  <h2>Key Feat Features</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+              </div>
+               <div class="row">
+                   <div class="col-md-3 key-div">
+                       <div class="key-cover">
+                           <i class="far fa-file-word"></i>
+                           <h4>Programing Experts</h4>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit  </p>
+                       </div>
+                   </div>
+                   <div class="col-md-3 key-div">
+                       <div class="key-cover">
+                           <i class="far fa-clock"></i>
+                           <h4>Timely Delivery</h4>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit  </p>
+                       </div>
+                   </div>
+                   <div class="col-md-3 key-div">
+                       <div class="key-cover">
+                           <i class="fas fa-object-group"></i>
+                           <h4>Quality Design</h4>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit  </p>
+                       </div>
+                   </div>
+                   <div class="col-md-3 key-div">
+                       <div class="key-cover">
+                           <i class="fas fa-phone-volume"></i>
+                           <h4>24 x 7 Suport</h4>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit  </p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+
+    <!--################### Testimonial Starts Here #######################--->
+        <div class="testimonial-container contaienr-fluid">
+            <div class="container">
+                <div class="session-title row">
+                  <h2>What People Say about Us</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+                </div>
+                <div class="test-row row">
+                    <div class="col-md-6">
+                        <div class="test-card">
+                            <div class="image">
+                                <img src="static/images/techhive/testimonial/member-01.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Krisinan Kumar</h3>
+                                <p>Vestibulum consequat ligula sit amet ligula mollis consequat  In consequat tincidunt risus. pellentesque pulvinar. Suspendisse congue a diam in volutpat. Nullam maximus, lectus </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="test-card">
+                            <div class="image">
+                                <img src="static/images/techhive/testimonial/member-02.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Steve Smith</h3>
+                                <p>Vestibulum consequat ligula sit amet ligula mollis consequat  In consequat tincidunt risus. pellentesque pulvinar. Suspendisse congue a diam in volutpat. Nullam maximus, lectus </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="test-card">
+                            <div class="image">
+                                <img src="static/images/techhive/testimonial/member-03.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Adel Reshide</h3>
+                                <p>Vestibulum consequat ligula sit amet ligula mollis consequat  In consequat tincidunt risus. pellentesque pulvinar. Suspendisse congue a diam in volutpat. Nullam maximus, lectus </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="test-card">
+                            <div class="image">
+                                <img src="static/images/techhive/testimonial/member-04.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Jonney Smith</h3>
+                                <p>Vestibulum consequat ligula sit amet ligula mollis consequat  In consequat tincidunt risus. pellentesque pulvinar. Suspendisse congue a diam in volutpat. Nullam maximus, lectus </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    <!--################### About Us Starts Here #######################--->
+
+         <div id="about" class="about-company">
+          <div class="container">
+              <div class="row">
+                 <div class="col-md-6">
+                   <div class="detail">
+                       <h3>About Company</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit mi, sed convallis nisi eleifend eget. Morbi vel magna odio. Lorem ipsum dolor consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est  consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est ipsum dolor sit arcu.</p>
+                       <p>Ut ullamcorper ac eros nec molestie. Curabitur luctus dui fringilla magna laoreet lacinia. Pellentesque velit ante, convallis quis justo vel, condimentum tempus diam. Donec vitae pretium lectus. Nullam faucibus nulla sit amet tincidunt gravida. Maecenas posuere pharetra tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent molestie lectus in arcu pharetra pulvinar. Donec cursus diam id quam accumsan maximus. Morbi ac tincidunt quam, quis cursus urna. Pellentesque in consectetur ante, a efficitur nisi.</p>
+                   </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="imag">
+                       <img src="static/images/techhive/about.jpg" alt="">
+                   </div>
+               </div> 
+              </div>
+          </div>
+           
+       </div>
+
+    <!--################### Latest News Starts Here #######################--->
+        <div class="blog-container contaienr-fluid">
+            <div class="container">
+                <div class="session-title row">
+                  <h2>What People Say about Us</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+                </div>
+                <div class="row news-row">
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <div class="image">
+                                <img src="static/images/techhive/blog/blog_01.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Latest News about Smarteye</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                                <p class="footp">
+                                    27 Comments <span>/</span>
+                                    Blog Design <span>/</span>
+                                    Read More
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <div class="image">
+                                <img src="static/images/techhive/blog/blog_02.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Apple Launch its New Phone</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                                <p class="footp">
+                                    27 Comments <span>/</span>
+                                    Blog Design <span>/</span>
+                                    Read More
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <div class="image">
+                                <img src="static/images/techhive/blog/blog_03.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>About Windows 10 Update</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                                <p class="footp">
+                                    27 Comments <span>/</span>
+                                    Blog Design <span>/</span>
+                                    Read More
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <div class="image">
+                                <img src="static/images/techhive/blog/blog_04.jpg" alt="">
+                            </div>
+                            <div class="detail">
+                                <h3>Latest News about Smarteye</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit consectetur adipiscing elit. </p>
+                                <p class="footp">
+                                    27 Comments <span>/</span>
+                                    Blog Design <span>/</span>
+                                    Read More
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--################### Count Starts Here #######################--->
+       <div id="why" class="our-capablit container-fluid">
+           <div class="layy">
+               <div class="container">
+                  <div class="row">
+                    <div class="col-md-3">
+                       <div class="cap-det">
+                           <!-- Progress bar 1 -->
+                            <div class="progress mx-auto" data-value='80'>
+                              <span class="progress-left">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <span class="progress-right">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+                              </div>
+                            </div>
+                            <!-- END -->
+                           <h6>Web Design</h6>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. </p>
+                       </div>
+                   </div>
+                   <div class="col-md-3">
+                       <div class="cap-det">
+                          <!-- Progress bar 1 -->
+                            <div class="progress mx-auto" data-value='80'>
+                              <span class="progress-left">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <span class="progress-right">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+                              </div>
+                            </div>
+                            <!-- END -->
+                           <h6>Android Development</h6>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. </p>
+                       </div>
+                   </div>
+                   <div class="col-md-3">
+                       <div class="cap-det">
+                          <!-- Progress bar 1 -->
+                            <div class="progress mx-auto" data-value='80'>
+                              <span class="progress-left">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <span class="progress-right">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
+                              </div>
+                            </div>
+                            <!-- END -->
+                           <h6>Frontend Developer</h6>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum.</p>
+                       </div>
+                   </div>
+                   
+                   <div class="col-md-3">
+                       <div class="cap-det">
+                          <!-- Progress bar 1 -->
+                            <div class="progress mx-auto" data-value='80'>
+                              <span class="progress-left">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <span class="progress-right">
+                                    <span class="progress-bar border-primary"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h2 font-weight-bold">60<sup class="small">%</sup></div>
+                              </div>
+                            </div>
+                            <!-- END -->
+                           <h6>SEO & Digital Marketing</h6>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum.</p>
+                       </div>
+                   </div>
+                  </div>
+               </div>
+           </div>
+       </div>
+
+
+    <!--################### Team Starts Here #######################--->
+    <section class="our-team team-11">
+        <div class="container">
+            <div class="session-title row">
+                  <h2>Take a look at Our Team</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+            </div>
+            <div class="row team-row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        <img src="static/images/techhive/team/team-memb1.jpg" alt="">
+                        <div class="det-o">
+                            <h4>David Kanuel</h4>
+                            <i>CEO</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        <img src="static/images/techhive/team/team-memb2.jpg" alt="">
+                        <div class="det-o">
+                            <h4>David Kanuel</h4>
+                            <i>Business Analsist</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        <img src="static/images/techhive/team/team-memb3.jpg" alt="">
+                        <div class="det-o">
+                            <h4>David Kanuel</h4>
+                            <i>Project Manager</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        <img src="static/images/techhive/team/team-memb4.jpg" alt="">
+                        <div class="det-o">
+                            <h4>David Kanuel</h4>
+                            <i>Team Leader</i>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!--################### Services Starts Here #######################--->
+    <div class="services container-fluid">
+       <div class="container">
+           <div class="session-title row">
+                  <h2>Our Services</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+            </div>
+            <div class="service-row row">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="far fa-lightbulb"></i> UI Designing</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fab fa-android"></i> Android Development</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fas fa-fill-drip"></i> Graphic Design</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fas fa-ad"></i> Website Design</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fas fa-seedling"></i> SEO</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fas fa-at"></i> Digital Marketing</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="far fa-address-card"></i> ERP  Applications</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h4><i class="fab fa-app-store"></i> App Development</h4>
+                        <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                        <span>Read more</span>
+                    </div>
+                </div>
+                
+            </div>
+       </div>
+        
+    </div>
+
+
+    <!--################### Pricing Starts Here #######################--->
+    
+     <section id="price" class="price-tab container-fluid">
+        <div class="container">
+           <div class="session-title row">
+                 <h2>Our Pricing</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit mi, sed convallis nisi eleifend eget.</p>
+           </div>
+            <div class="row">
+               
+                <div class="col-md-4">
+                    <div class="product-box">
+                        <div class="product-popular">
+                            Most Popular
+                        </div>
+                        <div class="product-price">
+                            <div class="rokij"> $189 <p class="term"> / month</p></div>
+                            
+                        </div>
+                        <div class="product-features">
+                            
+                            <ul class="smal">
+                               
+                                <li>
+                                    Powered by cPanel®
+                                </li>
+                                <li>
+                                    Dedicated IP Address
+                                </li>
+                                <li>
+                                    99.95% Uptime SLA
+                                </li>
+                                <li>
+                                    1000 Mbit Uplink
+                                </li>
+                                <li>
+                                    <strong>10</strong> Hosted Domains
+                                </li>
+                                <li>
+                                    <strong>25 GB</strong> RAID 10 Storage
+                                </li>
+                                <li>
+                                    <strong>200 GB</strong> Premium Bandwidth
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-order">
+                            <a class="btn btn-success" href="products-cloud-hosting.html#cloud-starter-monthly">
+                                <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-box ultimate">
+                        <div class="product-popular ppo">
+                            Most Popular
+                        </div>
+                        
+                        <div class="product-price">
+                            <div class="rokij">$389 <p class="term"> / month</p></div>
+                            
+                        </div>
+                        <div class="product-features">
+                           
+                            <ul class="smal">
+                                <li>
+                                    Powered by cPanel®
+                                </li>
+                                <li>
+                                    Dedicated IP Address
+                                </li>
+                                <li>
+                                    99.95% Uptime SLA
+                                </li>
+                                <li>
+                                    1000 Mbit Uplink
+                                </li>
+                                <li>
+                                    <strong>10</strong> Hosted Domains
+                                </li>
+                                <li>
+                                    <strong>25 GB</strong> RAID 10 Storage
+                                </li>
+                                <li>
+                                    <strong>200 GB</strong> Premium Bandwidth
+                                </li>
+                                <li>
+                                    Unlimied Emaills
+                                </li>
+                                <li>
+                                   Premium Support
+                                </li>
+                                <li>
+                                    Daily Backup
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-order">
+                            <a class="btn btn-success" href="products-cloud-hosting.html#cloud-starter-monthly">
+                                <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-box">
+                        <div class="product-popular">
+                            Most Popular
+                        </div>
+                        <div class="product-price">
+                            <div class="rokij">$689<p class="term"> / month</p></div>
+                        </div>
+                        <div class="product-features">
+                            
+                            <ul class="smal">
+                                <li>
+                                    Powered by cPanel®
+                                </li>
+                                <li>
+                                    Dedicated IP Address
+                                </li>
+                                <li>
+                                    99.95% Uptime SLA
+                                </li>
+                                <li>
+                                    1000 Mbit Uplink
+                                </li>
+                                 <li>
+                                    <strong>10</strong> Hosted Domains
+                                </li>
+                                <li>
+                                    <strong>25 GB</strong> RAID 10 Storage
+                                </li>
+                                <li>
+                                    <strong>200 GB</strong> Premium Bandwidth
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-order">
+                            <a class="btn btn-success" href="products-cloud-hosting.html#cloud-starter-monthly">
+                                <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

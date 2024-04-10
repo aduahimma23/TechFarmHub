@@ -1,0 +1,303 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="themexriver">
+
+    <!-- Page Title -->
+    <title> {% block title %}{% endblock %} </title>
+
+    <!-- Favicon and Touch Icons -->
+    <link href="{% static 'images/logo/techfarm_logo.jpg' %}" rel="shortcut icon" type="image/png">
+
+    <!-- Icon fonts -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Plugins for this template -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick-theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.mCustomScrollbar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'images/fav.jpg' %}" rel="shortcut icon">
+    <link href="{% static 'css/fontawsom-all.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-slider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-touchspin.css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Farm Hive css -->
+    <link href="{% static 'css/farm_style.css' %}" rel="stylesheet">
+
+    <!-- Tech Hive css -->
+    <link href="{% static 'css/techhive_style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="preloader-inner">
+                <img src="{% static 'images/preloader.gif' %}" alt>
+            </div>
+        </div>
+        <!-- end preloader -->
+
+        <!-- Start header -->
+        <header id="header" class="site-header header-style-5">
+            <div class="topbar topbar-style-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-sm-7">
+                            <div class="topbar-contact-info-wrapper">
+                                <div class="topbar-contact-info">
+                                    <div>
+                                        <i class="fa fa-location-arrow"></i>
+                                        <div class="details">
+                                            <p>5523 Research Park Drive, Suite 110</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-phone"></i>
+                                        <div class="details">
+                                            <p>+012 (3546) 547</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-sm-5">
+                            <div class="social">
+                                <span>Follow: </span>
+                                <ul class="social-links">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"></a><i></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div> <!-- end topbar -->
+
+            <div class="lower-topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-sm-3">
+                            <div class="site-logo">
+                                <a href="{% url 'main:home' %}"><img src="{% static 'images/logo/techfarm_logo.jpg' %}" class="site-header-logo" alt></a>
+                            </div>
+                        </div>
+
+                        <div class="col col-sm-9">
+                            <div class="awards">
+                                <div>
+                                    <div class="icon"></div>
+                                    <div class="award-info">
+                                        <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'main:search' %}">
+                                            <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search...">
+                                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                        </form>  
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end lower-topbar -->
+
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="open-btn">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navigation-holder">
+                        <button class="close-navbar"><i class="fa fa-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            {% if active_app == 'main' %}
+                            <li class="nav-item"><a href="{% url 'main:home' %}">Home</a></li>
+                            <li class="menu-item-has-children nav-item">
+                                <a href="#">Departments</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'farm:home' %}">Farm Hive</a></li>
+                                    <li><a href="{% url 'techhive:techhivehome' %}">Multimedia Hive</a></li>
+                                    <li><a href="{% url 'techhive:techhivehome' %}">Tech Hive</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="services.html">Services</a></li>
+                            <li class="nav-item"><a href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a href="{url 'main:team' %}">Team</a></li>
+                            <li class="nav-item"><a href="about.html">Events</a></li>
+                            <li class="menu-item-has-children nav-item">
+                                <a href="#">About</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'farm:about' %}">About Farm Hive</a></li>
+                                    <li><a href="{% url 'techhive:techhivehome' %}">About Multimedia Hive</a></li>
+                                    <li><a href="blog-left-sidebar.html">About Tech Hive</a></li>
+                                    <!-- <li><a href="blog-details.html">Blog single</a></li> -->
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="{% url 'main:contact' %}">Contact</a></li>
+                            {% endif %}
+                            {% if active_app == 'farm' %}
+                            <li class="nav-item"><a href="{% url 'main:home' %}">Main: Home</a></li>
+                            <li class="nav-item"><a href="{% url 'farm:home' %}">Home</a></li>                            
+                            <li class="nav-item"><a href="{% url 'farm:digifarm' %}">Digi Farms</a></li>
+                            <li class="nav-item"><a href="{% url 'farm:gellary' %}">Gellary</a></li>
+                            <li class="nav-item"><a href="{% url 'farm:about' %}">What we do</a></li>
+                            {% endif %}
+
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+
+                    <div class="create-account">
+                        {% if user_logged_in %}
+                        <div class="mini-account">
+                            <button class="cart-toggle-btn nav-item"><i class="fa fa-user" aria-hidden="true"></i>Account</button>
+                        
+                            <div class="top-cart-content">
+                                <div class="top-cart-items">
+                                    <div class="top-cart-item clearfix">
+                                        <div class="">
+                                            <a href="{% url 'account:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-item clearfix">
+                                        <div class="">
+                                            <a href="{% url 'cart:view' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="mini-account">
+                            <button class="cart-toggle-btn nav-item"><i class="fa fa-user" aria-hidden="true"></i>Account</button>
+                        
+                            <div class="top-cart-content">
+                                <div class="top-cart-items">
+                                    <div class="top-cart-item clearfix">
+                                        <div class="">
+                                            <a href="{% url 'account:login' %}"><i class="fa fa-user-plus" aria-hidden="true"></i> Login</a>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-item clearfix">
+                                        <div class="">
+                                            <a href="{% url 'account:signup' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Signup</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div><!-- end of container -->
+            </nav> <!-- end navigation -->
+        </header>
+        <!-- end of header -->
+
+        <div>
+            {% block content %} 
+
+            {% endblock %}
+        </div>
+
+        <!-- start site-footer -->
+        <footer class="site-footer">
+            <div class="upper-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-3 col-sm-6">
+                            <div class="widget about-widget">
+                                <div class="footer-logo"><img src="{% static 'images/logo/techfarm_logo.jpg' %}" class="site-header-logo" alt></div>
+                                <ul class="contact-info">
+                                    <li><i class="fa fa-home"></i> </li>
+                                    <li><i class="fa fa-phone"></i></li>
+                                    <li><i class="fa fa-home"></i> Working Hours: <br>Mon-Fri (9 am - 8 pm)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col col-md-3 col-sm-6">
+                            <div class="widget service-links-widget">
+                                <h3>Departments</h3>
+                                <ul>
+                                    <li><a href="{% url 'farm:home' %}">Agriculture</a></li>
+                                    <li><a href="#">Multimedia</a></li>
+                                    <li><a href="#">Technology</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col col-md-3 col-sm-6">
+                            <div class="widget quick-links-widget">
+                                <h3>Navigation</h3>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Courses</a></li>
+                                    <li><a href="#">Gallery</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">About</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-info">
+                <div class="container">
+                    <p><a target="_blank" href="#">Techfarm</a></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins for this template -->
+    <script src="{% static 'js/jquery-plugin-collection.js' %}"></script>
+    <script src="{% static 'js/jquery.mCustomScrollbar.js' %}"></script>
+
+    <!-- Custom script for this template -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Hech Hive js-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'plugins/scroll-fixed\jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'js/tech_script.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+</body>
+
+</html>
