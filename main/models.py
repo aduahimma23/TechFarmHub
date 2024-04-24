@@ -1,6 +1,15 @@
 from django.db import models
 from django.conf import settings
 
+class HomeLinks(models.Model):
+    address = models.CharField(max_length=100, blank=False)
+    contact = models.CharField(max_length=15, blank=False)
+    facebook_loink = models.URLField()
+    x_link = models.URLField()
+    linked_in_link = models.URLField()
+    google_link = models.URLField()
+    instagram_link = models.URLField()
+
 
 class ContactPage(models.Model):
     phone_number = models.IntegerField()
@@ -12,7 +21,7 @@ class ContactPage(models.Model):
         return self.email_address
     
 
-class HeaderImages(models.Model):
+class ChangeHeaderImages(models.Model):
     select_image = models.ImageField(upload_to='header_images', blank=False)
     short_description = models.CharField(max_length=150, blank=True)
     short_content = models.CharField(max_length=200, default='Tech Farm Hub')
@@ -28,6 +37,7 @@ class FooterArea(models.Model):
 class Partners(models.Model):
     name = models.CharField(max_length=100, blank=False, unique=True)
     image = models.ImageField(upload_to='partners_image', null=False)
+    short_content = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
@@ -54,79 +64,9 @@ class Projects(models.Model):
         return f'Name of Project {self.name} Country {self.country}'
     
 
-class FarmProject(models.Model):
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='farmproject_images', blank=False)
-
-    def __str__(self):
-        return self.project.name
-
-
-class MultimediaProject(models.Model):
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='multimediaproject_images', blank=False)
-
-    def __str__(self):
-        return self.project.name
-
-  
-class TechProject(models.Model):
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='techproject_images', blank=False)
-
-    def __str__(self):
-        return self.project.name
-
-class Gellary(models.Model):
-    image = models.ImageField(upload_to='gellary_images')
-    title = models.CharField(max_length=100)
-    description = models.CharField(max_length=500)
-    uploaded_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
-    
-
 class Search(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-
-    def __str__(self):
-        return self.title
-    
-
-class Department(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-    
-
-class Course(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    created_at = models.DateTimeField(auto_now_add=True)
-    instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    picture = models.ImageField(upload_to='course_pictures', null=True, blank=True)
-    subscribers = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='subscribed_courses')
-    
-    def __str__(self):
-        return self.title
-
-class Module(models.Model):
-    title = models.CharField(max_length=100)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
-    
-
-class Videos(models.Model):
-    title = models.CharField(max_length=100)
-    module = models.ForeignKey(Module, on_delete=models.CASCADE)
-    video_file = models.FileField(upload_to='course_videos')
 
     def __str__(self):
         return self.title

@@ -5,10 +5,15 @@ from .models import *
 
 def home_view(request):
     active_app = 'main'
-    return render(request, 'main/index.html', {'active_app': active_app})
+    home_header = ChangeHeaderImages.objects.all()
+    home_links = HomeLinks.objects.all()
+    footer = FooterArea.objects.all()
+    partners = Partners.objects.all()
+    return render(request, 'main/index.html', {'active_app': active_app, "home_header": home_header, "home_links": home_links, "footer": footer, "partners": partners})
 
 def contact_view(request):
-    return render(request, 'main/contact.html')
+    contact = ContactPage.objects.all()
+    return render(request, 'main/contact.html', {"contact": contact})
 
 def news_list(request):
     latest_news = NewsArticle.objects.order_by('-date_published')[:3]
@@ -20,7 +25,7 @@ def article_details(request, article_id):
 
 def project_list_view(request):
     projects = Projects.objects.all()
-    return render(request, 'main/project_list', {'projects': projects})
+    return render(request, 'main/project.html', {'projects': projects})
 
 def project_details_view(request, project_id):
     project_details = get_object_or_404(Projects, pk=project_id)

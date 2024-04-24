@@ -1,16 +1,14 @@
-from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.db import models
 
-
-class CustomeUserManager(BaseUserManager):
+class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
-            raise ValueError('The Email fields must be set')
+            raise ValueError('The Email field must be set')
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        user.get_password(password)
-        user.save(using=self._db)
-
+        user.set_password(password)
+        user.save()
         return user
     
     def create_superuser(self, email, password=None, **extra_fields):
@@ -18,7 +16,10 @@ class CustomeUserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
 
         return self.create_user(email, password, **extra_fields)
-    
+
+    def get_by_natural_key(self, email):
+        return self.get(email=email)
+
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
@@ -30,6 +31,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    objects = CustomUserManager()
 
     def __str__(self):
         return self.email
