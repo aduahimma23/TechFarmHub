@@ -11,9 +11,9 @@ def home_view(request):
     return render(request, 'farm/index.html', {'departments': departments, 'videos': videos,
                         'home_contents': home_contents, 'pictures': pictures,'active_app': active_app})
 
-def about_view(request):
-    about_farmhive = AboutFarmHive.objects.all()
-    return render(request, 'farm/about.html', {'about': about_farmhive, 'active_app': active_app})
+# def about_view(request):
+#     about_farmhive = AboutFarmHive.objects.all()
+#     return render(request, 'farm/about.html', {'about': about_farmhive, 'active_app': active_app})
 
 def gellary_view(request):
     gellary = VideoGellary.objects.all()[:5]

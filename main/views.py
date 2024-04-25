@@ -15,6 +15,10 @@ def contact_view(request):
     contact = ContactPage.objects.all()
     return render(request, 'main/contact.html', {"contact": contact})
 
+def about_view(request):
+    abouts = About.objects.all()
+    return render(request, 'main/about.html', {'about': abouts})
+
 def news_list(request):
     latest_news = NewsArticle.objects.order_by('-date_published')[:3]
     return render(request, 'news_list.html', {'latest_news': latest_news})
@@ -30,6 +34,10 @@ def project_list_view(request):
 def project_details_view(request, project_id):
     project_details = get_object_or_404(Projects, pk=project_id)
     return render(request, 'main/project_details', {'project_details': project_details})
+
+def service_view(request):
+    services = Services.objects.all()
+    return render(request, 'main/services.html', {"service": services})
 
 def search_view(request):
     query = request.GET.get('q')

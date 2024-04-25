@@ -13,4 +13,6 @@ urlpatterns = [
     path('search/', search_view, name='search'),
     path('team/', team_list_view, name='team'),
     path('team/<int:pk>/', team_details_view, name='team_detail'),
+    path('service/', service_view, name='services'),
+    path('about/', about_view, name='about'),
 ]

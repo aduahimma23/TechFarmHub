@@ -139,7 +139,6 @@
                     <div id="navbar" class="navbar-collapse collapse navigation-holder">
                         <button class="close-navbar"><i class="fa fa-close"></i></button>
                         <ul class="nav navbar-nav">
-                            {% if active_app == 'main' %}
                             <li class="nav-item"><a href="{% url 'main:home' %}">Home</a></li>
                             <li class="menu-item-has-children nav-item">
                                 <a href="#">Departments</a>
@@ -149,29 +148,12 @@
                                     <li><a href="{% url 'techhive:techhivehome' %}">Tech Hive</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a href="services.html">Services</a></li>
+                            <li class="nav-item"><a href="{% url 'main:services' %}">Services</a></li>
                             <li class="nav-item"><a href="{% url 'main:project_list' %}">Projects</a></li>
                             <li class="nav-item"><a href="{% url 'main:team' %}">Team</a></li>
-                            <li class="nav-item"><a href="about.html">Events</a></li>
-                            <li class="menu-item-has-children nav-item">
-                                <a href="#">About</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'farm:about' %}">About Farm Hive</a></li>
-                                    <li><a href="{% url 'techhive:techhivehome' %}">About Multimedia Hive</a></li>
-                                    <li><a href="blog-left-sidebar.html">About Tech Hive</a></li>
-                                    <!-- <li><a href="blog-details.html">Blog single</a></li> -->
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a href="about.html">Gallery</a></li>
+                            <li class="nav-item"><a href="{% url 'main:about' %}">About</a></li>
                             <li class="nav-item"><a href="{% url 'main:contact' %}">Contact</a></li>
-                            {% endif %}
-                            {% if active_app == 'farm' %}
-                            <li class="nav-item"><a href="{% url 'main:home' %}">Main: Home</a></li>
-                            <li class="nav-item"><a href="{% url 'farm:home' %}">Home</a></li>                            
-                            <li class="nav-item"><a href="{% url 'farm:digifarm' %}">Digi Farms</a></li>
-                            <li class="nav-item"><a href="{% url 'farm:gellary' %}">Gellary</a></li>
-                            <li class="nav-item"><a href="{% url 'farm:about' %}">What we do</a></li>
-                            {% endif %}
-
                         </ul>
                     </div><!-- end of nav-collapse -->
 
@@ -271,7 +253,7 @@
             </div>
             <div class="copyright-info">
                 <div class="container">
-                    <p><a target="_blank" href="#">Techfarm</a></p>
+                    <p><a target="_blank" href="{% url 'main:home' %}">Techfarm</a></p>
                 </div>
             </div>
         </footer>

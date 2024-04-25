@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+{% block title %}Services{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="services container-fluid">
+    <div class="container">
+         <div class="service-row row">
+
+             <div class="col-md-3">
+                 <div class="service-card">
+                    {% for servic in services %}
+                        <h4><i class="far fa-lightbulb"></i>{{ service.name_of_service }}</h4>
+                        <p>{{ service.content }}</p>
+                        <span>Read more</span>
+                    {% endfor %}
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="fab fa-android"></i> Android Development</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="fas fa-fill-drip"></i> Graphic Design</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="fas fa-ad"></i> Website Design</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="fas fa-seedling"></i> SEO</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="fas fa-at"></i> Digital Marketing</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+             <div class="col-md-3">
+                 <div class="service-card">
+                     <h4><i class="far fa-address-card"></i> ERP  Applications</h4>
+                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
+                     <span>Read more</span>
+                 </div>
+             </div>
+             
+         </div>
+    </div>
+     
+ </div>
+
+ {% endblock %}

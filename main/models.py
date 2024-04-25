@@ -28,11 +28,23 @@ class ChangeHeaderImages(models.Model):
 
     def __str__(self):
         return self.short_description
-    
+
+
+class About(models.Model):
+    title = models.CharField(max_length=120, blank=False, unique=True)
+    image = models.ImageField(upload_to='about_images')
+    content = models.TextField(max_length=2000, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
+
+
 class FooterArea(models.Model):
     update_contact = models.CharField(max_length=15, unique=True, blank=False)
     address = models.TextField()
     work_hours = models.DateTimeField(auto_now_add=False)
+
 
 class Partners(models.Model):
     name = models.CharField(max_length=100, blank=False, unique=True)
@@ -56,6 +68,7 @@ class NewsArticle(models.Model):
 class Projects(models.Model):
     name = models.CharField(max_length=50, unique=True, null=False)
     descirption = models.CharField(max_length=100)
+    videofile = models.FileField(upload_to='project_video', blank=False, default='')
     country = models.CharField(max_length=100, unique=False, blank=False, default='Ghana, Koforidua')
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
@@ -89,3 +102,33 @@ class Team(models.Model):
 
     def __str__(self) -> str:
         return f"{self.title} - {self.name_of_team_member}"
+    
+
+class Services(models.Model):
+    name_of_service = models.CharField(max_length=100, blank=False, unique=True)
+    content = models.CharField(max_length=255, blank=False, unique=True)
+    full_content = models.TextField(max_length=2000, blank=False, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.name_of_service
+    
+
+class Techhive(models.Model):
+    name = models.CharField(max_length=100, unique=True, blank=False)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.name
+
+
+class Courses(models.Model):
+    department = models.ForeignKey(Techhive, on_delete=models.CASCADE)
+    name_of_course = models.CharField(max_length=150, unique=True, blank=False)
+    videofile = models.FileField(upload_to="tech_hive_videos", unique=True)
+    description = models.CharField(max_length=255, unique=True, blank=False)
+    cate_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.name_of_course
+    

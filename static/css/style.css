@@ -4676,6 +4676,9 @@ img {
   -o-transition: all 0.3s;
   -ms-transition: all 0.3s;
   transition: all 0.3s;
+  height: 140px;
+  object-fit: fill;
+  width: 250px;
 }
 
 .partners-slider .grid:hover {

@@ -47,14 +47,6 @@ def increment_total_departments(sender, instance, created, **kwargs):
         instance.save()
 
 
-
-class AboutFarmHive(models.Model):
-    title = models.CharField(max_length=120)
-    short_content = models.CharField(max_length=500)
-    full_content = models.TextField()
-
-    def __str__(self) -> str:
-        return self.title
     
 
 class VideoGellary(models.Model):
