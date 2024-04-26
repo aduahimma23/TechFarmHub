@@ -122,7 +122,7 @@ class Services(models.Model):
         return self.name_of_service
     
 
-class Techhive(models.Model):
+class Department(models.Model):
     name = models.CharField(max_length=100, unique=True, blank=False)
     created_date = models.DateTimeField(auto_now_add=True)
 
@@ -131,7 +131,7 @@ class Techhive(models.Model):
 
 
 class Courses(models.Model):
-    department = models.ForeignKey(Techhive, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
     name_of_course = models.CharField(max_length=150, unique=True, blank=False)
     videofile = models.FileField(upload_to="tech_hive_videos", unique=True)
     description = models.CharField(max_length=255, unique=True, blank=False)
@@ -147,3 +147,23 @@ class Gallery(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+class FarmHive(models.Model):
+    departments = models.ForeignKey(Department, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, unique=True, blank=False)
+    videofile = models.FileField(upload_to='farm_hive', unique=True, blank=False)
+    description = models.CharField(max_length=255, blank=False)
+    _date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.name
+    
+class MultimediaHive(models.Model):
+    departments = models.ForeignKey(Department, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, unique=True, blank=False)
+    videofile = models.FileField(upload_to='farm_hive', unique=True, blank=False)
+    description = models.CharField(max_length=255, blank=False)
+    _date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.name
