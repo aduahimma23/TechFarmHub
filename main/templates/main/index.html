@@ -71,7 +71,7 @@
             </div>
             <div class="col col-lg-3 col-md-3">
                <div class="all-service-link">
-                    <a href="services.html" class="theme-btn">All Departments</a>
+                    <a href="{% url 'main:project_list' %}" class="theme-btn">All Departments</a>
                </div>
             </div>
         </div> <!-- end row -->
@@ -377,7 +377,7 @@
 
 
 <!-- start about-us-faq -->
-<!-- <section class="section-padding about-us-faq">
+<section class="section-padding about-us-faq">
     <div class="container">
         <div class="row">
             <div class="col col-lg-5">
@@ -449,13 +449,13 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div> <!-- end row -->
     </div> <!-- end container -->
-    <!-- <div class="backhoe-loader">
+    <div class="backhoe-loader">
         <img src="{% static 'images/backhoe-loader.png' %}" alt>
     </div>
-</section> -->
+</section>
 <!-- end start about-us-faq -->
 
 
@@ -466,9 +466,12 @@
         <div class="row">
             <div class="col col-xs-12">
                 <div class="partners-slider">
-                    <div class="grid">
-                        <img src="{% static 'images/partners/gifec.jpeg' %}" alt>
-                    </div>
+                    {% for partner in partners %}
+                        <div class="grid">
+                            <img src="{{ partner.logo.url }}" alt>
+                            <h3>{{ partner.name }}</h3>
+                        </div>
+                    {% endfor %}
                     <div class="grid">
                         <img src="{% static 'images/partners/yea.png' %}" alt>
                     </div>

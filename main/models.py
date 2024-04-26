@@ -1,14 +1,15 @@
 from django.db import models
 from django.conf import settings
 
-class HomeLinks(models.Model):
-    address = models.CharField(max_length=100, blank=False)
-    contact = models.CharField(max_length=15, blank=False)
-    facebook_loink = models.URLField()
-    x_link = models.URLField()
-    linked_in_link = models.URLField()
-    google_link = models.URLField()
-    instagram_link = models.URLField()
+class SocialMediaLinks(models.Model):
+    facebook = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    linkedIn = models.URLField(blank=True, null=True)
+    google = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+
+    def __str__(self) -> str:
+        return self.facebook, self.twitter, self.linkedIn, self.google, self.instagram
 
 
 class ContactPage(models.Model):
@@ -48,8 +49,8 @@ class FooterArea(models.Model):
 
 class Partners(models.Model):
     name = models.CharField(max_length=100, blank=False, unique=True)
-    image = models.ImageField(upload_to='partners_image', null=False)
-    short_content = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to='partners_image', null=False)
+    content = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
@@ -76,6 +77,14 @@ class Projects(models.Model):
     def __str__(self):
         return f'Name of Project {self.name} Country {self.country}'
     
+class ChangeProjectHeaderImage(models.Model):
+    name = models.CharField(max_length=20, blank=False, default='Project Name')
+    image = models.ImageField(upload_to='project_header_image', blank=True)
+    short_content = models.CharField(max_length=120, blank=True)
+
+    def __str__(self) -> str:
+        return self.name
+    
 
 class Search(models.Model):
     title = models.CharField(max_length=100)
@@ -94,10 +103,9 @@ class Team(models.Model):
 
     title = models.CharField(max_length=10, choices=TITLE)
     name_of_team_member = models.CharField(max_length=100, unique=True)
-    positon = models.CharField(max_length=50, blank=False)
+    position = models.CharField(max_length=50, blank=False)
     image = models.ImageField(upload_to='team_member_images')
-    short_content = models.CharField(max_length=255, blank=True, default='Tech Farm Hub')
-    full_content = models.TextField()
+    bio = models.TextField()
     date_joined = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
@@ -132,3 +140,10 @@ class Courses(models.Model):
     def __str__(self) -> str:
         return self.name_of_course
     
+class Gallery(models.Model):
+    title = models.CharField(max_length=100, blank=False, unique=True)
+    image_file = models.ImageField(upload_to='gallery', blank=False, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title

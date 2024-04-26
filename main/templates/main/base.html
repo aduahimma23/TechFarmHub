@@ -33,10 +33,8 @@
     <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
     <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
     <link href="{% static 'css/jquery.mCustomScrollbar.min.css' %}" rel="stylesheet">
-    <link href="{% static 'images/fav.jpg' %}" rel="shortcut icon">
-    <link href="{% static 'css/fontawsom-all.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap-slider.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-touchspin.css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-touchspin.css' %}">
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
 
     <!-- Custom styles for this template -->
@@ -87,12 +85,12 @@
                         </div>
                         <div class="col col-sm-5">
                             <div class="social">
-                                <span>Follow: </span>
+                                <span>Follow US: </span>
                                 <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"></a><i></i></li>
+                                    <li><a href="{{ social.facebook }}"><i class="fa fa-facebook-square"></i></a></li>
+                                    <li><a href="{{ social.twitter }}"><i class="fa fa-twitter-square"></i></a></li>
+                                    <li><a href="{{ social.lindedIn }}"><i class="fa fa-linkedin-square"></i></a></li>
+                                    <li><a href="{{ social.instagram }}"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -151,7 +149,7 @@
                             <li class="nav-item"><a href="{% url 'main:services' %}">Services</a></li>
                             <li class="nav-item"><a href="{% url 'main:project_list' %}">Projects</a></li>
                             <li class="nav-item"><a href="{% url 'main:team' %}">Team</a></li>
-                            <li class="nav-item"><a href="about.html">Gallery</a></li>
+                            <li class="nav-item"><a href="{% url 'main:gallery' %}">Gallery</a></li>
                             <li class="nav-item"><a href="{% url 'main:about' %}">About</a></li>
                             <li class="nav-item"><a href="{% url 'main:contact' %}">Contact</a></li>
                         </ul>
@@ -242,8 +240,8 @@
                                 <ul>
                                     <li><a href="#">Gallery</a></li>
                                     <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">About</a></li>
+                                    <li><a href="{% url 'main:contact' %}">Contact Us</a></li>
+                                    <li><a href="{% url 'main:about' %}">About</a></li>
                                 </ul>
                             </div>
                         </div>

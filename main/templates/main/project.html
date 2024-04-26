@@ -3,17 +3,23 @@
 {% block content %}
 {% load static %}
 
+<div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('{{ project_header.image.url }}');">
+        <h2 class="headers">Projects</h2>
+        <h3 class="header-content">{{ project_header.short_content }}</h3>
+    </div>
+</div>
+
 <div class="container">
     <div class="cl-project">
         <div class="row">
-            <h2 class="cl-head">Latest projects</h2>
-            <div class="col-lg-4 col-lg-6 col-lg-8">
+            <div class="col-lg-4">
                 {% for project in projects %}
-                    <h3>{project.name}</h3>
-                    <video src="{% project.videofile.url %}"></video>
-                    <h4>{project.description}</h4>
-                    <h4>{project.country}</h4>
-                    <p>{project.content}</p>
+                    <h3>{{ project.name }}</h3>
+                    <video src="{{ project.videofile.url }}"></video>
+                    <h4>{{ project.description }}</h4>
+                    <h4>{{ project.country }}</h4>
+                    <p>{{ project.content }}</p>
                 {% endfor %}
             </div>
         </div>

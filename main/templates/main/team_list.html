@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% block title %}Team{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="our-team team-11">
+    <div class="container">
+        <div class="session-title row">
+              <h2>Take a look at Our Team</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla vel nisl a dictum. Donec ut est arcu. Donec hendrerit velit</p>
+        </div>
+        <div class="row team-row">
+            <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        {% for member in members %}
+                            <img src="{{ member.image.url }}" alt="">
+                            <div class="det-o">
+                                <h3>{{ member.title }}. {{ member.name_of_team_member }}</h3>
+                                <h4>{{ member.position }}</h4>
+                                <p>
+                                    {% if member.bio|length > 100 %}
+                                        {{ member.bio|slice:"100"}}....
+                                        <a href="{% url 'main:team_details' team_member.team_id %}">Read More"</a>
+                                    {% else %}
+                                        {{ member.bio }}
+                                    {% endif %}
+                                </p>
+                                <p>{{ member.date_joined }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-usr">
+                    <img src="{% static 'images/main/team-memb2.jpg' %}" alt="">
+                    <div class="det-o">
+                        <h4>David Kanuel</h4>
+                        <i>Business Analsist</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-usr">
+                    <img src="{% static 'images/main/team-memb3.jpg' %}" alt="">
+                    <div class="det-o">
+                        <h4>David Kanuel</h4>
+                        <i>Project Manager</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-usr">
+                    <img src="{% static 'images/main/team-memb4.jpg' %}" alt="">
+                    <div class="det-o">
+                        <h4>David Kanuel</h4>
+                        <i>Team Leader</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

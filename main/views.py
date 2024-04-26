@@ -6,10 +6,13 @@ from .models import *
 def home_view(request):
     active_app = 'main'
     home_header = ChangeHeaderImages.objects.all()
-    home_links = HomeLinks.objects.all()
+    social = SocialMediaLinks.objects.all()
     footer = FooterArea.objects.all()
     partners = Partners.objects.all()
-    return render(request, 'main/index.html', {'active_app': active_app, "home_header": home_header, "home_links": home_links, "footer": footer, "partners": partners})
+    projects = Projects.objects.all()[:5]
+
+    return render(request, 'main/index.html', {'active_app': active_app, "home_header": home_header,
+                "social": social, "footer": footer, "partners": partners, "projects": projects})
 
 def contact_view(request):
     contact = ContactPage.objects.all()
@@ -29,7 +32,8 @@ def article_details(request, article_id):
 
 def project_list_view(request):
     projects = Projects.objects.all()
-    return render(request, 'main/project.html', {'projects': projects})
+    project_header = ChangeProjectHeaderImage.objects.all()
+    return render(request, 'main/project.html', {'projects': projects, 'project_image': project_header})
 
 def project_details_view(request, project_id):
     project_details = get_object_or_404(Projects, pk=project_id)
@@ -45,9 +49,14 @@ def search_view(request):
     return render(request, 'main/search_results.html', {'results': results})
 
 def team_list_view(request):
-    team_members = Team.objects.all()
-    return render(request, 'main/team_list.html', {'teams': team_members})
+    members = Team.objects.all()
+    return render(request, 'main/team_list.html', {'teams': members})
 
 def team_details_view(request, team_id):
-    team_details = get_object_or_404(Team, pk=team_id)
-    return render(request, 'main/team_details.html', {'team_details': team_details})
+    members = get_object_or_404(Team, team_id=team_id)
+    return render(request, 'main/team_details.html', {'team_members': members})
+
+def galleryView(request):
+    gallery = Gallery.objects.all()
+
+    return render(request, 'main/gallery.html', {'gallery': gallery})
