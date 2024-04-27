@@ -23,12 +23,12 @@ class ContactPage(models.Model):
     
 
 class ChangeHeaderImages(models.Model):
-    select_image = models.ImageField(upload_to='header_images', blank=False)
-    short_description = models.CharField(max_length=150, blank=True)
-    short_content = models.CharField(max_length=200, default='Tech Farm Hub')
+    image = models.ImageField(upload_to='header_images', blank=False)
+    description = models.CharField(max_length=150, blank=True)
+    content = models.CharField(max_length=200, default='Tech Farm Hub')
 
     def __str__(self):
-        return self.short_description
+        return self.description
 
 
 class About(models.Model):
@@ -129,7 +129,6 @@ class Department(models.Model):
     def __str__(self) -> str:
         return self.name
 
-
 class Section(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     name_of_course = models.CharField(max_length=150, unique=True, blank=False)
@@ -140,7 +139,16 @@ class Section(models.Model):
     def __str__(self) -> str:
         return self.name_of_course
     
-class Gallery(models.Model):
+class FarmhiveGallery(models.Model):
+    title = models.CharField(max_length=100, blank=False, unique=True)
+    image_file = models.ImageField(upload_to='gallery', blank=False, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class MultimediahiveGallery(models.Model):
     title = models.CharField(max_length=100, blank=False, unique=True)
     image_file = models.ImageField(upload_to='gallery', blank=False, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -148,12 +156,21 @@ class Gallery(models.Model):
     def __str__(self) -> str:
         return self.title
     
+class TechhiveGallery(models.Model):
+    title = models.CharField(max_length=100, blank=False, unique=True)
+    image_file = models.ImageField(upload_to='gallery', blank=False, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title
+    
+
 class FarmHive(models.Model):
     departments = models.ForeignKey(Department, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, unique=True, blank=False)
     videofile = models.FileField(upload_to='farm_hive', unique=True, blank=False)
     description = models.CharField(max_length=255, blank=False)
-    _date_created = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.name
@@ -173,7 +190,7 @@ class TechHive(models.Model):
     name = models.CharField(max_length=255, unique=True, blank=False)
     videofile = models.FileField(upload_to='farm_hive', unique=True, blank=False)
     description = models.CharField(max_length=255, blank=False)
-    _date_created = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.name

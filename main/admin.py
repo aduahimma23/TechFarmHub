@@ -23,7 +23,7 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(ChangeHeaderImages)
 class HeaderImagesAdmin(admin.ModelAdmin):
-    list_display = ('select_image', 'short_description', 'short_content')
+    list_display = ('image', 'description', 'content')
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):

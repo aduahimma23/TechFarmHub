@@ -60,3 +60,12 @@ def galleryView(request):
     gallery = Gallery.objects.all()
 
     return render(request, 'main/gallery.html', {'gallery': gallery})
+
+def techhiveView(request):
+    return render(request, 'main/tech_hive.html')
+
+def multimediaView(request):
+    return render(request, 'main/multimedia_hive.html')
+
+def farmhiveView(request):
+    return render(request, 'main/farm_hive.html')

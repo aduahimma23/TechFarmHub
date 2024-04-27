@@ -141,9 +141,9 @@
                             <li class="menu-item-has-children nav-item">
                                 <a href="#">Departments</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{% url 'farm:home' %}">Farm Hive</a></li>
-                                    <li><a href="{% url 'techhive:techhivehome' %}">Multimedia Hive</a></li>
-                                    <li><a href="{% url 'techhive:techhivehome' %}">Tech Hive</a></li>
+                                    <li><a href="{% url 'main:farmhive' %}">Farm Hive</a></li>
+                                    <li><a href="{% url 'main:multihive' %}">Multimedia Hive</a></li>
+                                    <li><a href="{% url 'main:techhive' %}">Tech Hive</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a href="{% url 'main:services' %}">Services</a></li>
@@ -163,7 +163,7 @@
                             <div class="top-cart-content">
                                 <div class="top-cart-items">
                                     <div class="top-cart-item clearfix">
-                                        <div class="">
+                                        <div class="sub-menu">
                                             <a href="{% url 'account:logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                                         </div>
                                     </div>
@@ -182,12 +182,12 @@
                             <div class="top-cart-content">
                                 <div class="top-cart-items">
                                     <div class="top-cart-item clearfix">
-                                        <div class="">
+                                        <div class="sub-menu">
                                             <a href="{% url 'account:login' %}"><i class="fa fa-user-plus" aria-hidden="true"></i> Login</a>
                                         </div>
                                     </div>
                                     <div class="top-cart-item clearfix">
-                                        <div class="">
+                                        <div class="sub-menu">
                                             <a href="{% url 'account:signup' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Signup</a>
                                         </div>
                                     </div>

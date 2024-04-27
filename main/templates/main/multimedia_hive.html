@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% block title %}Tech Hive{% endblock %}
+{% block content %}
+{% load static %}
+
+<section class="hero hero-slider-wrapper">
+    <div class="hero-slider hero-slider-style-1">
+        <div class="slide">
+            <img src="{% static 'images/main/home1.jpg' %}" alt class="slider-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-8 col-sm-9 slide-caption">
+                        <h1><strong>Multimedia Hive</strong></h1>
+                        <h2>We provide the best <span>Course</span>Across Africa</h2>
+                        <p>An unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <div class="btns">
+                            <a href="#" class="theme-btn">Courses</a>
+                            <a href="#" class="theme-btn-s2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'images/main/home2.jpg' %}" alt class="slider-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-8 col-sm-9 slide-caption">
+                        <h2>We provide the best <span>Projects</span> Services worldwide</h2>
+                        <p>An unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <div class="btns">
+                            <a href="#" class="theme-btn">Projects</a>
+                            <a href="#" class="theme-btn-s2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'images/main/home1.jpg' %}" alt class="slider-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-8 col-sm-9 slide-caption">
+                        <h2>We provide the best <span>Events</span> Services worldwide</h2>
+                        <p>An unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <div class="btns">
+                            <a href="#" class="theme-btn">Events</a>
+                            <a href="#" class="theme-btn-s2">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

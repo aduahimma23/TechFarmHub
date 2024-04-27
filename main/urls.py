@@ -16,4 +16,7 @@ urlpatterns = [
     path('service/', service_view, name='services'),
     path('about/', about_view, name='about'),
     path('gallery/', galleryView, name='gallery'),
+    path('tech_hive/', techhiveView, name='techhive'),
+    path('farm_hive/', farmhiveView, name='farmhive'),
+    path('multimedia_hive/', multimediaView, name='multihive'),
 ]

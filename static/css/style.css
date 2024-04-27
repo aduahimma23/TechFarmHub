@@ -3050,6 +3050,11 @@ img {
   }
 }
 
+.top-cart-item .sub-menu a:hover{
+  background-color: #5f0f40;
+  color: #f2f2f2;
+}
+
 /**************************************
 	#header style 4
 ****************************************/
