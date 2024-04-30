@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title %}Details {% endblock %}
+{% block content %}
+{% load static %}
+
+{% if request.session.selected_item %}
+    <p>You have selected an item:</p>
+    <p>Type: {{ request.session.selected_item.type }}</p>
+    <p>PK: {{ request.session.selected_item.pk }}</p>
+    <!-- Display more details about the selected item -->
+{% else %}
+    <p>No item selected.</p>
+{% endif %}
+
+{% endblock %}

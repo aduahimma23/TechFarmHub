@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import *
 
@@ -57,15 +58,37 @@ def team_details_view(request, team_id):
     return render(request, 'main/team_details.html', {'team_members': members})
 
 def galleryView(request):
-    gallery = Gallery.objects.all()
+    farms = FarmhiveGallery.objects.all()
+    techs = TechhiveGallery.objects.all()
+    multimedias = MultimediahiveGallery.objects.all()
+    context = {"farms": farms, "techs": techs, "multimedias": multimedias}
 
-    return render(request, 'main/gallery.html', {'gallery': gallery})
+    return render(request, 'main/gallery.html', context)
 
 def techhiveView(request):
-    return render(request, 'main/tech_hive.html')
+    techs = TechHive.objects.all()
+    return render(request, 'main/tech_hive.html', {'techs': techs})
 
 def multimediaView(request):
-    return render(request, 'main/multimedia_hive.html')
+    multimedias = MultimediaHive.objects.all()
+    return render(request, 'main/multimedia_hive.html', {'multimedias': multimedias})
 
 def farmhiveView(request):
-    return render(request, 'main/farm_hive.html')
+    farms = FarmHive.objects.all()
+    return render(request, 'main/farm_hive.html', {'farms': farms})
+
+@login_required
+def buy_now(request, item_type, pk):
+    item = None
+    if item_type == 'tech':
+        item = get_object_or_404(TechHive, pk=pk)
+    elif item_type == 'multimedia':
+        item = get_object_or_404(MultimediaHive, pk=pk)
+    elif item_type == 'farm':
+        item = get_object_or_404(FarmHive, pk=pk)
+
+    if item:
+        request.session['selected_item'] = {'type': item_type, 'pk': pk}
+        return redirect('main:details')
+    else:
+        raise ValueError("No Item selected to proceed with the payment")

@@ -3,5 +3,46 @@
 {% block content %}
 {% load static %}
 
-    
+
+<div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/static/images/body-bg.jpg');">
+        <h2 class="headers">ABOUT US</h2>
+        <h3 class="header-content"></h3>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Related Video</h1>
+    <div class="row">
+        {% for video in videos %}
+        <div class="col-md-4">
+            <div class="video-card">
+                <h2 class="video-title">{{ video.title }}</h2>
+                <video class="video-file" controls>
+                    <source src="{{ video.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="text-muted mt-3">Uploaded on {{ video.created_at }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Related Pictures</h1>
+    <div class="row">
+        {% for picture in pictures %}
+        <div class="col-md-4">
+            <div class="card picture-card">
+                <img src="{{ picture.image.url }}" class="card-img-top" alt="{{ picture.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ picture.title }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

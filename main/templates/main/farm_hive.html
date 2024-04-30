@@ -56,4 +56,23 @@
     </div>
 </section>
 
+<div class="container">
+    <h1 class="hive-header">Farm Hive Department Details</h1>
+    <div class="row">
+        {% for farm in farms %}
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <img src="{{ farm.videofile.url }}" class="card-img-top" alt="Farm Hive Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ farm.name }}</h5>
+                    <p class="card-text">{{ farm.description }}</p>
+                    <a href=""><button>Add to cart</button></a>
+                    <a href=""><button>Buy Now</button></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

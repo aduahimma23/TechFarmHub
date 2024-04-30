@@ -3,7 +3,14 @@
 {% block content %}
 {% load static %}
 
-    <section class="hero hero-slider-wrapper">
+<div class="breadcrumb-area">
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url('/static/images/body-bg.jpg');">
+        <h2 class="headers">ABOUT US</h2>
+        <h3 class="header-content"></h3>
+    </div>
+</div>
+
+    <!-- <section class="hero hero-slider-wrapper">
         <div class="hero-slider hero-slider-style-1">
             <div class="slide">
                 <img src="{% static 'images/main/home1.jpg' %}" alt class="slider-bg">
@@ -54,6 +61,42 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <div class="container">
+        <h1 class="hive-header">Tech Hive Department Details</h1>
+        <div class="row">
+            {% for tech in techs %}
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <img src="{{ tech.videofile.url }}" class="card-img-top" alt="Farm Hive Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ tech.name }}</h5>
+                        <p class="card-text">{{ tech.description }}</p>
+                        <a href="" class="btn-add-cart"><button>Add to cart</button></a>
+                        <a href="{% url 'main:details' %}" class="btn-buy-now"><button>Buy Now</button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="hive-header">Tech Hive Department Details</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <img src="" class="card-img-top" alt="Farm Hive Image">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <a href="" class="btn-add-cart"><button>Add to cart</button></a>
+                        <a href="{% url 'main:details' %}" class="btn-buy-now"><button>Buy Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
