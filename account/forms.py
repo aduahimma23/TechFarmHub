@@ -37,15 +37,15 @@ class UserRegistrationForm(forms.ModelForm):
 
 
 class UserLogin(forms.Form):
-    username = forms.CharField(label='Username')
+    username = forms.CharField(label='Username/Email')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
 
 class StaffLogin(forms.Form):
-    username = forms.CharField(label='Username')
+    username = forms.CharField(label='Username/Email')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
 
 class ManagerLoginForm(forms.Form):
-    username = forms.CharField(label='Username')
+    username = forms.CharField(label='Username/Email')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)

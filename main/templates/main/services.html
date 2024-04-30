@@ -3,71 +3,103 @@
 {% block content %}
 {% load static %}
 
-<div class="services container-fluid">
+     <section class="section-padding">
     <div class="container">
-         <div class="service-row row">
+        <div class="row">
+            <div class="col col-lg-3 col-md-4">
+                <div class="section-title">
+                    <h2>Our Departments</h2>
+                </div>
+            </div>
+            <div class="col col-lg-6 col-md-5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <div class="col col-lg-3 col-md-3">
+               <div class="all-service-link">
+                    <a href="{% url 'main:project_list' %}" class="theme-btn">All Departments</a>
+               </div>
+            </div>
+        </div> <!-- end row -->
+        
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="services-grids service-slider dots-s1">
+                    <div class="grid">
+                       <div class="inner mk-bg-img">
+                            <div class="details ">
+                               <div class="info">
+                                    <img src="{% static 'images/services/img-1.jpg' %}" alt class="bg-image">
+                                    <a href="service-single.html">
+                                        <h3><i class="fi flaticon-construction"></i>Farm Hive</h3>
+                                    </a>
+                                    <p>Ut enim ad minim veniam, quis nos trud exerci tation ullamco.</p>
+                                    <a href="service-single.html" class="more">Get Details</a>
+                               </div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="grid">
+                       <div class="inner mk-bg-img">
+                            <div class="details ">
+                               <div class="info">
+                                    <img src="{% static 'images/services/img-2.jpg' %}" alt class="bg-image">
+                                    <a href="service-single.html">
+                                        <h3><i class="fi flaticon-construction"></i>Multimedia&amp; Hive</h3>
+                                    </a>
+                                    <p>Ut enim ad minim veniam, quis nos trud exerci tation ullamco.</p>
+                                    <a href="service-single.html" class="more">Get Details</a>
+                               </div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="grid">
+                       <div class="inner mk-bg-img">
+                            <div class="details ">
+                               <div class="info">
+                                    <img src="{% static 'images/services/img-3.jpg' %}" alt class="bg-image">
+                                    <a href="service-single.html">
+                                        <h3><i class="fi flaticon-construction"></i>Tech Hive</h3>
+                                    </a>
+                                    <p>Ut enim ad minim veniam, quis nos trud exerci tation ullamco.</p>
+                                    <a href="service-single.html" class="more">Get Details</a>
+                               </div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="grid">
+                       <div class="inner mk-bg-img">
+                            <div class="details ">
+                               <div class="info">
+                                    <img src="{% static 'images/services/img-1.jpg' %}" alt class="bg-image">
+                                    <a href="service-single.html">
+                                        <h3><i class="fi flaticon-construction"></i> Mechanical Works</h3>
+                                    </a>
+                                    <p>Ut enim ad minim veniam, quis nos trud exerci tation ullamco.</p>
+                                    <a href="service-single.html" class="more">Get Details</a>
+                               </div>
+                            </div>
+                       </div>
+                    </div>
+                </div> <!-- end services-grids -->
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
 
-             <div class="col-md-3">
-                 <div class="service-card">
-                    {% for servic in services %}
-                        <h4><i class="far fa-lightbulb"></i>{{ service.name_of_service }}</h4>
-                        <p>{{ service.content }}</p>
-                        <span>Read more</span>
-                    {% endfor %}
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="fab fa-android"></i> Android Development</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="fas fa-fill-drip"></i> Graphic Design</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="fas fa-ad"></i> Website Design</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="fas fa-seedling"></i> SEO</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="fas fa-at"></i> Digital Marketing</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-             <div class="col-md-3">
-                 <div class="service-card">
-                     <h4><i class="far fa-address-card"></i> ERP  Applications</h4>
-                     <p> Donec vitae vehicula massa, vitae dignissim felis. Sed euismod tincidunt laoreet. Donec risus magna, vehicula non imperdiet nec, lacinia sit amet neque. </p>
-                     <span>Read more</span>
-                 </div>
-             </div>
-             
-         </div>
+    <div class="services container-fluid">
+        <div class="container">
+            <div class="service-row row">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        {% for service in services %}
+                            <h4><i class="far fa-lightbulb"></i>{{ service.name_of_service }}</h4>
+                            <p>{{ service.content }}</p>
+                            <span>Read more</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>  
     </div>
-     
- </div>
 
  {% endblock %}

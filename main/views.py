@@ -42,7 +42,8 @@ def project_details_view(request, project_id):
 
 def service_view(request):
     services = Services.objects.all()
-    return render(request, 'main/services.html', {"service": services})
+    # departments = Department.objects.all()[3]
+    return render(request, 'main/services.html', {"services": services})
 
 def search_view(request):
     query = request.GET.get('q')

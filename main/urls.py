@@ -19,5 +19,5 @@ urlpatterns = [
     path('tech_hive/', techhiveView, name='techhive'),
     path('farm_hive/', farmhiveView, name='farmhive'),
     path('multimedia_hive/', multimediaView, name='multihive'),
-    path('details/', buy_now, name='details'),
+    path('details/<str:item_type>/<int:pk>', buy_now, name='details'),
 ]
